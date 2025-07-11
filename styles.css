@@ -15,45 +15,75 @@ body {
   color: var(--text);
 }
 
-/* Sticky + animacja */
+/* === HERO SECTION === */
+.hero {
+  position: relative;
+  height: 100vh;
+  background-image: url("images/bg.webp"); /* Twoje tło */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #3a2c27;
+  padding: 4rem 1rem 2rem;
+}
+
+/* === LOGO === */
 .hero .logo {
+  position: relative;
+  width: 120px;
+  height: auto;
+  animation: fadeDown 1s ease-out forwards;
+  margin-bottom: 1rem;
+  z-index: 2;
+}
+
+/* Animacja logo */
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === NAGŁÓWEK I PODTYTUŁ === */
+.hero h1,
+.hero .subtitle {
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  backdrop-filter: blur(4px);
+  max-width: 90%;
+  margin: 0.5rem auto;
+}
+
+/* === LANG BUTTONS === */
+.lang-switch {
+  margin-top: 1rem;
+  z-index: 2;
+}
+
+/* === STICKY NAVBAR (nie logo) === */
+nav {
   position: sticky;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100px;
-  height: auto;
-  z-index: 1000;
-  opacity: 0;
-  animation: fadeDown 1s ease-out forwards;
-  background-color: rgba(255, 255, 255, 0.1); /* lekkie tło, opcjonalnie */
-  backdrop-filter: blur(4px); /* efekt szkła */
-  margin-top: 0; /* bez odstępu */
-  padding: 0.25rem;
-}
-
-@media (min-width: 768px) {
-  .hero .logo {
-    width: 120px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .hero .logo {
-    width: 140px;
-  }
-}
-
-/* Kluczowe klatki animacji */
-@keyframes fadeDown {
-  0% {
-    transform: translate(-50%, -20px);
-    opacity: 0;
-  }
-  100% {
-    transform: translate(-50%, 0);
-    opacity: 1;
-  }
+  background: rgba(255, 240, 245, 0.9); /* pastelowy róż */
+  backdrop-filter: blur(6px);
+  padding: 0.75rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  z-index: 10;
+  font-weight: bold;
 }
 
 .overlay {
