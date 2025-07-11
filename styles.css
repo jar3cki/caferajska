@@ -15,16 +15,21 @@ body {
   color: var(--text);
 }
 
+/* Sticky + animacja */
 .hero .logo {
-  position: absolute;
+  position: sticky;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
   width: 100px;
   height: auto;
-  z-index: 10;
-  opacity: 0.9;
-  padding-top: 0.5rem;
+  z-index: 1000;
+  opacity: 0;
+  animation: fadeDown 1s ease-out forwards;
+  background-color: rgba(255, 255, 255, 0.1); /* lekkie tło, opcjonalnie */
+  backdrop-filter: blur(4px); /* efekt szkła */
+  margin-top: 0; /* bez odstępu */
+  padding: 0.25rem;
 }
 
 @media (min-width: 768px) {
@@ -36,6 +41,18 @@ body {
 @media (min-width: 1024px) {
   .hero .logo {
     width: 140px;
+  }
+}
+
+/* Kluczowe klatki animacji */
+@keyframes fadeDown {
+  0% {
+    transform: translate(-50%, -20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, 0);
+    opacity: 1;
   }
 }
 
