@@ -16,14 +16,32 @@ body {
 }
 
 .hero {
-  background-image: url('images/bg.webp');
+  position: relative;
+  height: 100vh;
+  background-image: url("images/bg.webp");
   background-size: cover;
   background-position: center;
-  position: relative;
-  height: 80vh;
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+.hero .overlay {
+  background: rgba(0, 0, 0, 0.4); /* półprzezroczysta nakładka */
+  padding: 2rem;
+  border-radius: 1rem;
+  max-width: 90%;
+}
+
+.logo {
+  width: 160px;
+  max-width: 80%;
+  height: auto;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
 }
 
 .overlay {
